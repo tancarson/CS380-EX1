@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public final class EchoClient extends Thread{
-
+	
     public void run(){
         try (Socket socket = new Socket("localhost", 2222)) {
             InputStream is = socket.getInputStream();
@@ -27,9 +27,9 @@ public final class EchoClient extends Thread{
             	message = co.readLine();
             }
             out.println(message);
-            Thread.sleep(20);
-            EchoClient next = new EchoClient();
-            next.start();
+            //Thread.sleep(20);
+            //EchoClient next = new EchoClient();
+            //next.start();
         }
         catch(Exception ex){
         	System.out.println("Client Error: " + ex);
